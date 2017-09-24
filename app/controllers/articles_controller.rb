@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   def index
-    @articles = Article.all
+    @programming_languages = ProgrammingLanguage.all
+    @articles = ArticlesQuery.new(article_params.to_h).get
   end
 
   def new
