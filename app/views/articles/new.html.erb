@@ -2,6 +2,8 @@
 <%= form_tag articles_path do %>
   <%= label_tag :title, "Title:" %>
   <%= text_field_tag :title %> </br>
+  <%= label_tag :programming_language_id, "Programming Language:" %>
+  <%= select_tag :programming_language_id, options_from_collection_for_select(@programming_languages, :id, :name), prompt: "Select" %> </br>
   <%= label_tag :body, "Content:" %>
   <%= text_area_tag :body %> </br>
   <%= submit_tag "Create Article" %>

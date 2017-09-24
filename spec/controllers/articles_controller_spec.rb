@@ -28,6 +28,14 @@ RSpec.describe ArticlesController, type: :controller do
       expect(response).to have_http_status(:success)
     end
 
+    it "assigns list of programming language" do
+      articles = create_list(:article, 2)
+
+      get :index
+
+      expect(assigns(:articles)).to match_array(articles)
+    end
+
     it "renders the article's new template" do
       expect(subject).to render_template("articles/new")
     end

@@ -9,4 +9,6 @@ RSpec.describe Article, type: :model do
       body: be_an_instance_of(String)
     )
   end
+
+  it { is_expected.to belong_to(:programming_language) }
 end

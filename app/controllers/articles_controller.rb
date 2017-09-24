@@ -3,7 +3,9 @@ class ArticlesController < ApplicationController
     @articles = Article.all
   end
 
-  def new; end
+  def new
+    @programming_languages = ProgrammingLanguage.all
+  end
 
   def create
     Article.create(article_params.to_h)
@@ -13,6 +15,6 @@ class ArticlesController < ApplicationController
 private
 
   def article_params
-    params.permit(:title, :body)
+    params.permit(:title, :body, :programming_language_id)
   end
 end
