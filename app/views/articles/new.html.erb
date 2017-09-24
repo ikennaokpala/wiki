@@ -1,0 +1,8 @@
+<h1>Add an Article</h1>
+<%= form_tag articles_path do %>
+  <%= label_tag :title, "Title:" %>
+  <%= text_field_tag :title %> </br>
+  <%= label_tag :body, "Content:" %>
+  <%= text_area_tag :body %> </br>
+  <%= submit_tag "Create Article" %>
+<% end %>
