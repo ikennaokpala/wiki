@@ -1,3 +1,10 @@
+<h1>Search Article</h1>
+<%= form_tag articles_path, method: :get do %>
+  <%= text_field_tag :title, params[:title], placeholder: "Type article title" %>
+  <%= select_tag :programming_language_id, options_from_collection_for_select(@programming_languages, :id, :name), prompt: "Select" %>
+  <%= submit_tag "Search" %>
+<% end %>
+
 <h1>Index of Articles</h1>
 <ul>
   <%= render @articles %>
