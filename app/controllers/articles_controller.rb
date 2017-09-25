@@ -8,6 +8,10 @@ class ArticlesController < ApplicationController
     @programming_languages = ProgrammingLanguage.all
   end
 
+  def show
+    @article = Article.find(article_params[:id])
+  end
+
   def create
     Article.create(article_params.to_h)
     redirect_to new_article_path
@@ -16,6 +20,6 @@ class ArticlesController < ApplicationController
 private
 
   def article_params
-    params.permit(:title, :body, :programming_language_id)
+    params.permit(:id, :title, :body, :programming_language_id)
   end
 end

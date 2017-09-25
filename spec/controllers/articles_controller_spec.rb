@@ -53,6 +53,26 @@ RSpec.describe ArticlesController, type: :controller do
     end
   end
 
+  describe "GET #show" do
+    let(:article) { create(:article) }
+
+    before do
+      get :show, params: { id: article.id }
+    end
+
+    it "gives a http success status" do
+      expect(response).to have_http_status(:success)
+    end
+
+    it "assigns list of articles" do
+      expect(assigns(:article)).to eq(article)
+    end
+
+    it "renders the article's show template" do
+      expect(subject).to render_template("articles/show")
+    end
+  end
+
   describe "POST #create" do
     it "creates a new article" do
       params = { title: "Article Title", body: "Article Content" }
