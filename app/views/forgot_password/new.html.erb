@@ -1,0 +1,6 @@
+<h1>Reset password</h1>
+<%= form_tag forgot_password_index_path do %>
+  <%= label_tag :username, "Username:" %>
+  <%= text_field_tag :username %> </br>
+  <%= submit_tag "Reset" %>
+<% end %>

@@ -9,5 +9,6 @@ RSpec.describe "sessions/new.html.erb", type: :view do
     expect(rendered).to have_field("Username")
     expect(rendered).to have_field("Password")
     expect(rendered).to have_button("Sign in")
+    expect(rendered).to have_link("Forgot password")
   end
 end
